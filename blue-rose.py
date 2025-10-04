@@ -8,7 +8,7 @@ class Interface:
     def __init__(self, root):
         self.root = root
         self.root.title("Blue Rose")
-        self.root.geometry("500x400")
+        self.root.geometry("500x450")
         self.root.resizable(False, False)
 
         # frame container
@@ -26,7 +26,7 @@ class Interface:
             self.frm_menu.grid_columnconfigure(j, weight=1)
 
         lbl_menu = tk.Label(self.frm_menu, text="Main Menu", font=("Arial", 18))
-        lbl_menu.grid(row=0, column=0, columnspan=2, pady=10)
+        lbl_menu.grid(row=0, column=0, columnspan=2, pady=(10, 5))
 
         # lista de botões
         self.botoes = [
@@ -44,10 +44,10 @@ class Interface:
         for i, (texto, comando) in enumerate(self.botoes):
             col = 0 if i < 4 else 1  # define a coluna (esquerda/direita)
             row = (i % 4) + 1        # linhas 1 a 4
-            btn = tk.Button(self.frm_menu, text=texto, font=("Arial", 12), width=15, height=2, command=comando)
+            btn = tk.Button(self.frm_menu, text=texto, font=("Arial", 12), width=30, height=3, command=comando)
             btn.grid(row=row, column=col, padx=20, pady=10)
 
-        # ----------- FRAME DE RASTREIO -----------
+        # frame do rastreio de ip
         self.frm_rastreio = tk.Frame(self.container)
         self.frm_rastreio.place(relwidth=1, relheight=1)
 
