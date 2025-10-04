@@ -26,7 +26,7 @@ class Rastreio:
 class Interface:
     def __init__(self, root):
         self.root = root
-        self.root.title("red rose")
+        self.root.title("blue rose")
         self.root.geometry("500x400")
         self.root.resizable(False, False)
 
