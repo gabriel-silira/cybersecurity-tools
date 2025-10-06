@@ -1,4 +1,5 @@
-from tkinter import messagebox
+import customtkinter
+from CTkMessagebox import CTkMessagebox
 import requests
 
 class Rastreioclass:
@@ -19,6 +20,6 @@ class Rastreioclass:
                 f"Latitude: {resposta['lat']}\n"
                 f"Longitude: {resposta['lon']}"
             )
-            messagebox.showinfo("IP info", resultado)
+            CTkMessagebox(title="IP Info", message=resultado, icon="info", option_1="Ok", border_width=10)
         else:
-            messagebox.showerror("Error", "IP not found (Private)")
+            CTkMessagebox(title="Error", message="IP not found (Private)", icon="cancel", option_1="Ok", border_width=10)
